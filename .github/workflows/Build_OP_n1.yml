@@ -105,7 +105,7 @@ jobs:
     - name: Build n1 firmware
       working-directory: ./mknop
       run:
-        cp ../openwrt/bin/targets/x86/64/*.* ./openwrt
+        cp ../openwrt/bin/targets/x86/64/*efi.img ./openwrt
         sudo ./gen_openwrt -d
 
     - name : Upload artifact
