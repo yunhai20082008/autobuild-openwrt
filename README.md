@@ -1,6 +1,6 @@
-# 源码用于创建自动编译的精简的openwrt
+# 源码用于创建自动编译的精简openwrt
 源码来自于lean的openwrt，eSirPlayground的自动编译脚本，tuanqing的n1工具，lisaac的dockerman
-##注意事项：
+## 注意事项：
 1.主分支只用于对源码进行说明
 2.分支push后会自动触发对应分支的自动编译
 3.x86为精简固件，集成了dockerman、iperf3、tcpdump以及其他一些常用luci-app，删除了无线相关的一些包
