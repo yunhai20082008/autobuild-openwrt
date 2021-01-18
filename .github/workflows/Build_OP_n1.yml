@@ -100,12 +100,13 @@ jobs:
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
+        make -j1 V=s
+      # make -j$(nproc) V=s
 
     - name: Build n1 firmware
       working-directory: ./mknop
       run:
-        cp ../openwrt/bin/targets/*/*/*tar.gz ./openwrt
+        cp ../openwrt/bin/targets/*/*/*.img ./openwrt
         sudo ./gen_openwrt -d
 
     - name : Upload artifact
