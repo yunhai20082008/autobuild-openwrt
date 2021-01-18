@@ -102,7 +102,7 @@ jobs:
         echo -e "$(nproc) thread build."
         make -j$(nproc) V=s
 
-    - name:Build n1 firmware
+    - name: Build n1 firmware
       working-directory: ./mknop
       run:
         cp ./openwrt/bin/targets/x86/64/*.* ./mknop/openwrt
