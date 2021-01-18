@@ -11,7 +11,7 @@
 
     **使用方法**：
 
-        - 使用 [Etcher](https://www.balena.io/etcher/)写入u盘
+        - 使用 [Etcher](https://www.balena.io/etcher/)写入u盘 [Etcher](https://www.balena.io/etcher/)
         - 启动后执行 n1-install 即可安装到 emmc
         - 将固件上传到 /tmp/upgrade( xxx.img )，之后执行 n1-update 即可从该固件升级
 5.
