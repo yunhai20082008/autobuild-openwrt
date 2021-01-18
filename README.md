@@ -1,4 +1,5 @@
-源码用于创建自动编译的精简的源自lean的openwrt，eSirPlayground的自动编译脚本，tuanqing的n1工具，
+# 源码用于创建自动编译的精简的openwrt
+源码来自于lean的openwrt，eSirPlayground的自动编译脚本，tuanqing的n1工具，lisaac的dockerman
 
 主分支只用于对源码进行说明，分支push后会自动触发对应分支的自动编译
 
