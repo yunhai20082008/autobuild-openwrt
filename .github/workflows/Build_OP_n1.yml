@@ -116,5 +116,5 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: /openwrt/bin/targets/*/*/*ext4.img
+        path: /openwrt/bin/targets/*/*/*.*
         # path: /mknop/out/
