@@ -109,12 +109,35 @@ jobs:
     - name: Build n1 firmware
       working-directory: ./mknop
       run:
-        cp ../openwrt/bin/targets/*/*/*.tar.gz ./openwrt
+        cp openwrt/bin/targets/*/*/*.tar.gz ./openwrt
         sudo ./gen_openwrt -d
 
-    - name : Upload artifact
+    - name : upload-lean-tar.gz
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt
-        #path: /openwrt/bin/targets/*
-        path: /mknop/out/*/*.*
+        name: lean-tar.gz
+        path: openwrt/bin/targets/*/*/*.tar.gz
+
+    - name : upload-lean-img
+      uses: actions/upload-artifact@master
+      with:
+        name: lean-img
+        path: openwrt/bin/targets/*/*/*.img
+
+    - name : upload-mknop-img
+      uses: actions/upload-artifact@master
+      with:
+        name: mknop-img
+        path: /mknop/out/*/*.img
+
+    - name : upload-mknop-.
+      uses: actions/upload-artifact@master
+      with:
+        name: mknop-.
+        path: /mknop/out/*/*
+
+    - name : upload-mknop-
+      uses: actions/upload-artifact@master
+      with:
+        name: mknop-
+        path: /mknop/out/*/
