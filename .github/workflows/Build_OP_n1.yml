@@ -114,7 +114,7 @@ jobs:
 
     - name: Build n1 firmware
       working-directory: ./mknop
-      run:
+      run: |
         pwd
         cp ../ openwrt/bin/targets/*/*/*.tar.gz ./openwrt
         cd ../openwrt
