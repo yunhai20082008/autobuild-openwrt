@@ -103,11 +103,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
-<<<<<<< HEAD
         #  make -j1 V=s
-=======
-        #        make -j1 V=s
->>>>>>> 3cdfc6c09837b37205d66ab1b5fff367e02d8de1
         make -j$(nproc) V=s
 
     - name: Build n1 firmware
