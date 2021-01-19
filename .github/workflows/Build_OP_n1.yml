@@ -106,11 +106,11 @@ jobs:
         #  make -j1 V=s
         make -j$(nproc) V=s
 
-     - name: Build n1 firmware
-       working-directory: ./mknop
-       run:
-         cp ../openwrt/bin/targets/*/*/*.img ./openwrt
-         sudo ./gen_openwrt -d -m phicomm-n1
+    - name: Build n1 firmware
+      working-directory: ./mknop
+      run:
+        cp ../openwrt/bin/targets/*/*/*.img ./openwrt
+        sudo ./gen_openwrt -d -m phicomm-n1
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
