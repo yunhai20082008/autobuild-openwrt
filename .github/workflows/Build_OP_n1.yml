@@ -105,45 +105,37 @@ jobs:
         echo -e "$(nproc) thread build."
         #  make -j1 V=s
         make -j$(nproc) V=s
-
-    - name: Build n1 firmware
-      working-directory: ./mknop
-      run: |
-        pwd
-        cp ../ openwrt/bin/targets/*/*/*.tar.gz ./openwrt
-        cd ../openwrt
-        pwd
-        cd ../mknop
-        pwd
-        la ./openwrt
-        sudo ./gen_openwrt -d
-
+   
     - name : upload-lean-tar.gz
       uses: actions/upload-artifact@master
       with:
         name: lean-tar.gz
         path: openwrt/bin/targets/*/*/*.tar.gz
 
-    - name : upload-lean-img
-      uses: actions/upload-artifact@master
-      with:
-        name: lean-img
-        path: openwrt/bin/targets/*/*/*.img
+    - name: Build n1 firmware
+      run: |
+        pwd
+        cp openwrt/bin/targets/*/*/*.tar.gz mknop/openwrt
+        cd mknop/
+        pwd
+        la openwrt/
+        la ../openwrt
+        sudo ./gen_openwrt -d
 
     - name : upload-mknop-img
       uses: actions/upload-artifact@master
       with:
         name: mknop-img
-        path: /mknop/out/*/*.img
+        path: mknop/out/*/*.img
 
     - name : upload-mknop-.
       uses: actions/upload-artifact@master
       with:
         name: mknop-.
-        path: /mknop/out/*/*
+        path: mknop/out/*/*
 
     - name : upload-mknop-
       uses: actions/upload-artifact@master
       with:
         name: mknop-
-        path: /mknop/out/*/
+        path: mknop/out/*/
