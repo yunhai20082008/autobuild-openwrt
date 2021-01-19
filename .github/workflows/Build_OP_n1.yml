@@ -65,6 +65,7 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         git clone --depth 1 https://github.com/tuanqing/mknop
         cd openwrt
+        pwd
         git clone --depth 1 https://github.com/tuanqing/install-program package/install-program
         sed -i '11s/#//' feeds.conf.default
         
@@ -74,6 +75,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
+        pwd
 
     #- name: Import external feeds
     #  working-directory: ./openwrt
@@ -88,7 +90,8 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
-        
+        pwd
+
     - name: Download package
       working-directory: ./openwrt
       run: |
@@ -113,4 +116,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt
-        path: /openwrt/bin/targets/*/*/*.gz
+        path: /openwrt/bin/targets/
