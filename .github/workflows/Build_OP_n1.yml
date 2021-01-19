@@ -106,12 +106,6 @@ jobs:
         #  make -j1 V=s
         make -j$(nproc) V=s
 
-    - name : upload-lean-tar.gz
-      uses: actions/upload-artifact@master
-      with:
-        name: lean-tar.gz
-        path: openwrt/bin/targets/*/*/*.tar.gz
-
     - name: Build n1 firmware
       working-directory: ./mknop
       run: |
@@ -123,6 +117,12 @@ jobs:
         pwd
         la ./openwrt
         sudo ./gen_openwrt -d
+
+    - name : upload-lean-tar.gz
+      uses: actions/upload-artifact@master
+      with:
+        name: lean-tar.gz
+        path: openwrt/bin/targets/*/*/*.tar.gz
 
     - name : upload-lean-img
       uses: actions/upload-artifact@master
