@@ -109,7 +109,7 @@ jobs:
      - name: Build n1 firmware
        working-directory: ./mknop
        run:
-         cp ../openwrt/bin/targets/*/*/*.tar.gz ./openwrt
+         cp ../openwrt/bin/targets/*/*/*.img ./openwrt
          sudo ./gen_openwrt -d -m phicomm-n1
 
     - name : Upload artifact
