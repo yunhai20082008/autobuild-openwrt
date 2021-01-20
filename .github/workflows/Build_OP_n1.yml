@@ -114,12 +114,8 @@ jobs:
 
     - name: Build n1 firmware
       run: |
-        pwd
         cp openwrt/bin/targets/*/*/*.tar.gz mknop/openwrt
         cd mknop/
-        pwd
-        la openwrt/
-        la ../openwrt
         sudo ./gen_openwrt -d
 
     - name : upload-mknop-img
