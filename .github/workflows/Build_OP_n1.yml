@@ -116,22 +116,10 @@ jobs:
       run: |
         cp openwrt/bin/targets/*/*/*.tar.gz mknop/openwrt
         cd mknop/
-        sudo ./gen_openwrt -d
+        sudo ./gen_openwrt -d -m phicomm-n1
 
     - name : upload-mknop-img
       uses: actions/upload-artifact@master
       with:
         name: mknop-img
-        path: mknop/out/*/*.img
-
-    - name : upload-mknop-.
-      uses: actions/upload-artifact@master
-      with:
-        name: mknop-.
-        path: mknop/out/*/*
-
-    - name : upload-mknop-
-      uses: actions/upload-artifact@master
-      with:
-        name: mknop-
-        path: mknop/out/*/
+        path: mknop/out/phicomm-n1/*.img
