@@ -66,8 +66,8 @@ jobs:
         git clone https://github.com/lisaac/luci-app-dockerman.git
         cp -r luci-app-dockerman/applications/luci-app-dockerman ./openwrt/package/lean/
         cd openwrt
-        #hw_hang = $(cat feeds.conf.default | wc -l)
-        sed -i "${cat feeds.conf.default | wc -l}s/#//" feeds.conf.default
+        hw_hang=$(cat feeds.conf.default | wc -l)
+        sed -i "${hw_hang}s/#//" feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
