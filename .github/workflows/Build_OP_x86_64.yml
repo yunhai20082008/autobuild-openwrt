@@ -63,12 +63,14 @@ jobs:
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        git clone https://github.com/lisaac/luci-app-dockerman.git
-        cp -r luci-app-dockerman/applications/luci-app-dockerman ./openwrt/package/lean/
+        # git clone https://github.com/lisaac/luci-app-dockerman.git
+        # cp -r luci-app-dockerman/applications/luci-app-dockerman ./openwrt/package/lean/
         cd openwrt
-        hw_hang=$(cat feeds.conf.default | wc -l)
-        sed -i "${hw_hang}s/#//" feeds.conf.default
-        
+        svn checkout https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant ./package/
+        svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash ./package/
+        # hw_hang=$(cat feeds.conf.default | wc -l)
+        # sed -i "${hw_hang}s/#//" feeds.conf.default
+
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
