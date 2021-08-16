@@ -73,7 +73,8 @@ jobs:
 
         ### svn co https://github.com/fw876/helloworld package/helloworld
         #### git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
-        sed -i "s/$/&src-git helloworld https://github.com/fw876/helloworld/g" feeds.conf.default    
+        cd openwrt
+        sed -i '$a\src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
         # hw_hang=$(cat feeds.conf.default | wc -l)
         # sed -i "${hw_hang}s/#//" feeds.conf.default
 
