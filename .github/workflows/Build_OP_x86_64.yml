@@ -72,11 +72,8 @@ jobs:
         ##cd ..
 
         ### svn co https://github.com/fw876/helloworld package/helloworld
-        git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
-        ls package
-        ls package/helloworld
-
-
+        #### git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
+        sed -i "s/$/&src-git helloworld https://github.com/fw876/helloworld/g" feeds.conf.default    
         # hw_hang=$(cat feeds.conf.default | wc -l)
         # sed -i "${hw_hang}s/#//" feeds.conf.default
 
