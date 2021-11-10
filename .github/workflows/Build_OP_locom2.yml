@@ -113,10 +113,10 @@ jobs:
         mkdir -p ./artifact/firmware
         mkdir -p ./artifact/package
         mkdir -p ./artifact/buildinfo
-        rm -rf $(find ./bin/targets/ -type d -name "packages")
-        cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
-        cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
-        cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
+        rm -rf $(find ./openwrt/bin/targets/ -type d -name "packages")
+        cp -rf $(find ./openwrt/bin/targets/ -type f) ./artifact/firmware/
+        cp -rf $(find ./openwrt/bin/packages/ -type f -name "*.ipk") ./artifact/package/
+        cp -rf $(find ./openwrt/bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
 
     - name: Deliver buildinfo
       uses: actions/upload-artifact@v2
@@ -135,9 +135,3 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ./bin/targets/ 
- 
-    - name : Upload artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: OpenWrt
-        path: ./bin/targets/*.bin
