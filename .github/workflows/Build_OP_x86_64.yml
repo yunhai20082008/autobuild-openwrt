@@ -77,6 +77,7 @@ jobs:
         sed -i '$a\src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
         sed -i '$a\src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;packages' feeds.conf.default
         sed -i '$a\src-git lucipasswall https://github.com/xiaorouji/openwrt-passwall.git;luci' feeds.conf.default
+        sed -i '$a\src-git gowebdav https://github.com/immortalwrt-collections/openwrt-gowebdav.git' feeds.conf.default
         # hw_hang=$(cat feeds.conf.default | wc -l)
         # sed -i "${hw_hang}s/#//" feeds.conf.default
 
