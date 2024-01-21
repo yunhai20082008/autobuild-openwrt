@@ -74,10 +74,10 @@ jobs:
         ### svn co https://github.com/fw876/helloworld package/helloworld
         #### git clone --depth 1 https://github.com/fw876/helloworld.git package/helloworld
         cd openwrt
-        sed -i '$a\src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-        sed -i '$a\src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;packages' feeds.conf.default
-        sed -i '$a\src-git lucipasswall https://github.com/xiaorouji/openwrt-passwall.git;luci' feeds.conf.default
-        sed -i '$a\src-git gowebdav https://github.com/immortalwrt-collections/openwrt-gowebdav.git' feeds.conf.default
+       # sed -i '$a\src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+        sed -i '$a\src-git passwall https://github.com/xiaorouji/openwrt-passwall-packages.git;main' feeds.conf.default
+        sed -i '$a\src-git lucipasswall https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
+       # sed -i '$a\src-git gowebdav https://github.com/immortalwrt-collections/openwrt-gowebdav.git' feeds.conf.default
         # hw_hang=$(cat feeds.conf.default | wc -l)
         # sed -i "${hw_hang}s/#//" feeds.conf.default
 
