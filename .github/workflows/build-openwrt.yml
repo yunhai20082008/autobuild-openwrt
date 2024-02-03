@@ -9,6 +9,7 @@
 #
 
 name: Build OpenWrt
+run-name: ${{ github.ref_name }}-${{github.run_number}}
 
 on:
   repository_dispatch:
